@@ -146,8 +146,7 @@ public class ATMGUI extends Application {
                     try {
                         double depositAmount = Double.parseDouble(amount);
                         selectedCustomer.setBalance(selectedCustomer.getBalance() + depositAmount);
-                        customerDetailsTextArea.setText("Name: " + selectedCustomer.getName() + "\nAccount Number: "
-                                + selectedCustomer.getAccountNumber() + "\nBalance: " + selectedCustomer.getBalance());
+                        customerDetailsTextArea.setText("Name: " + selectedCustomer.getName() + "\nNew Balance: " + selectedCustomer.getBalance());
                         showAlert(Alert.AlertType.INFORMATION, "Success", "Deposit successful.");
                     } catch (NumberFormatException ex) {
                         showAlert(Alert.AlertType.ERROR, "Error", "Invalid amount entered.");
@@ -172,8 +171,7 @@ public class ATMGUI extends Application {
                         double withdrawAmount = Double.parseDouble(amount);
                         if (selectedCustomer.getBalance() >= withdrawAmount) {
                             selectedCustomer.setBalance(selectedCustomer.getBalance() - withdrawAmount);
-                            customerDetailsTextArea.setText("Name: " + selectedCustomer.getName() + "\nAccount Number: "
-                                    + selectedCustomer.getAccountNumber() + "\nBalance: " + selectedCustomer.getBalance());
+                            customerDetailsTextArea.setText("Name: " + selectedCustomer.getName() +"\nNew Balance: " + selectedCustomer.getBalance());
                             showAlert(Alert.AlertType.INFORMATION, "Success", "Withdrawal successful.");
                         } else {
                             showAlert(Alert.AlertType.ERROR, "Error", "Insufficient balance.");
